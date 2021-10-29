@@ -33,16 +33,9 @@ test("shows success message on submit with form details", async () => {
     const button = screen.getByRole('button');
     userEvent.click(button);
 
-    const success = await screen.queryByTestID('successMessage')
-    expect(success).toBeInTheDocument();
+    const successMessage = await screen.getByTestId('successMessage');
+    expect(successMessage).toBeInTheDocument();
 
 
 
 });
-
-firstName: "",
-  lastName: "",
-  address: "",
-  city: "",
-  state: "",
-  zip: "",
